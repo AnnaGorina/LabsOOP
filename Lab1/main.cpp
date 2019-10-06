@@ -5,6 +5,7 @@
 #include <iostream>
 #include <vector>
 #include <string>
+#include <iterator>
 
 int main()
 {
@@ -28,42 +29,6 @@ int main()
     Company Intel("Intel");
     Company Cisco("Cisco");
     Company Oracle("Oracle");
-    
-   /* Microsoft.JoinAPerson(FirstPerson);
-    Microsoft.JoinAPerson(ThirdPerson);
-    Microsoft.JoinAPerson(FifthPerson);
-    Microsoft.JoinAPerson(SeventhPerson);
-    Microsoft.JoinAPerson(NinthPerson);
-    
-    Apple.JoinAPerson(SecondPerson);
-    Apple.JoinAPerson(FourthPerson);
-    Apple.JoinAPerson(SixthPerson);
-    Apple.JoinAPerson(EighthPerson);
-    Apple.JoinAPerson(TenthPerson);
-    
-    Samsung.JoinAPerson(ThirdPerson);
-    Samsung.JoinAPerson(SixthPerson);
-    Samsung.JoinAPerson(NinthPerson);
-    
-    Google.JoinAPerson(FourthPerson);
-    Google.JoinAPerson(EighthPerson);
-    
-    Intel.JoinAPerson(FifthPerson);
-    Intel.JoinAPerson(TenthPerson);
-    
-    Cisco.JoinAPerson(FirstPerson);
-    Cisco.JoinAPerson(SecondPerson);
-    Cisco.JoinAPerson(ThirdPerson);
-    Cisco.JoinAPerson(FourthPerson);
-    Cisco.JoinAPerson(FifthPerson);
-    
-    Oracle.JoinAPerson(SixthPerson);
-    Oracle.JoinAPerson(SeventhPerson);
-    Oracle.JoinAPerson(EighthPerson);
-    Oracle.JoinAPerson(NinthPerson);
-    Oracle.JoinAPerson(TenthPerson);
-
-    std::vector <Person> Person = Microsoft;*/
 
     std::vector <Company> company;
 
@@ -75,6 +40,7 @@ int main()
     company.push_back(Cisco);
     company.push_back(Oracle);
 
+    //////////////////////////ТЕСТ№1///////////////////////////////////////////////////////
     company[0].JoinAPerson(FirstPerson);
     company[0].JoinAPerson(ThirdPerson);
     company[0].JoinAPerson(FifthPerson);
@@ -109,13 +75,34 @@ int main()
     company[6].JoinAPerson(NinthPerson);
     company[6].JoinAPerson(TenthPerson);
 
+    std::cout << "ТЕСТ №1: " << std::endl;
     for (uint16_t i = 0; i < company.size(); i++)
     {
-        std::cout << "******************************************************" << std::endl;
-        std::cout << "Компания: " << company[i] << std::endl;
-        std::cout << "ФИО работников: " << std::endl;
-        std::cout << company[i].GetNameOfPerson(i).get_surname_person() << " " << company[i].GetNameOfPerson(i).get_name_person() << " " << company[i].GetNameOfPerson(i).get_patronymic_person() << std::endl;
-        std::cout << "******************************************************" << std::endl;
+        std::cout << company[i] << std::endl;
+    }
+
+    //////////////////////////////////ТЕСТ№2///////////////////////////////////////////////////////////
+
+    company[0].DismissPerson(FifthPerson);
+    company[1].DismissPerson(FourthPerson);
+    company[6].DismissPerson(EighthPerson);
+
+    std::cout << "ТЕСТ №2: " << std::endl;
+    for (uint16_t i = 0; i < company.size(); i++)
+    {
+        std::cout << company[i] << std::endl;
+    }
+
+    ////////////////////////////////////ТЕСТ№3/////////////////////////////////////////////////////
+
+    company[1].JoinAPerson(ThirdPerson);
+    company[3].JoinAPerson(ThirdPerson);
+    company[4].JoinAPerson(ThirdPerson); //не добавит, так как у работника уже имеется 5 компаний!!!
+
+    std::cout << "ТЕСТ №3: " << std::endl;
+    for (uint16_t i = 0; i < company.size(); i++)
+    {
+        std::cout << company[i] << std::endl;
     }
 
     system("Pause");
