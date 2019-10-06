@@ -15,8 +15,6 @@ class Person
 
     std::vector <std::string> NamesOfCompany; //компании, в которых работает работник
 
-    //std::string NameCompany; //название компании
-
 public:
     Person(const std::string Surname, const std::string Name, const std::string Patronymic);
 
@@ -30,8 +28,6 @@ public:
 
     unsigned GetCountCompany(); //получить число компаний, в которых работает работник
 
-    //void request(); //запрос в компанию
-
     bool JoinACompany(Company& company); //вступить в компанию
 
     bool LeaveCompany(std::string Company); //покинуть компанию
@@ -42,3 +38,4 @@ public:
 std::ostream& operator<<(std::ostream& stream, Person& person);
 
 #endif // PERSON_H
+
