@@ -93,4 +93,6 @@ std::ostream &operator<<(std::ostream &stream, Person &person)
         stream << person.GetNameOfCompany(i) << std::endl;
     }
     stream << "******************************************************" << std::endl;
+
+    return stream;
 }
