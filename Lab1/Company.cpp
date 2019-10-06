@@ -92,10 +92,14 @@ Company::~Company() = default;
 
 std::ostream &operator<<(std::ostream &stream, Company &company)
 {
+    stream << "******************************************************" << std::endl;
+    stream << "Компания: " << company.get_company() << std::endl;
+    stream << "ФИО работников: " << std::endl;
     for (uint16_t i = 0; i < company.GetCountPerson(); i++)
     {
-        stream << "******************************************************" << std::endl;
-        stream << "ФИО работника: " << company.GetNameOfPerson(i).get_surname_person() << " " << company.GetNameOfPerson(i).get_name_person() << " " << company.GetNameOfPerson(i).get_patronymic_person() << std::endl;
-        stream << "******************************************************" << std::endl;
+        stream << company.GetNameOfPerson(i).get_surname_person() << " " << company.GetNameOfPerson(i).get_name_person() << " " << company.GetNameOfPerson(i).get_patronymic_person() << std::endl;
     }
+    stream << "******************************************************" << std::endl;
+
+    return stream;
 }
