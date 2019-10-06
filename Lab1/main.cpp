@@ -105,7 +105,7 @@ int main()
         std::cout << company[i] << std::endl;
     }
 
-    system("Pause");
+    std::cin.get();
 
     return 0;
 }
