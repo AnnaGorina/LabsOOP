@@ -15,8 +15,6 @@ class Company
 
     std::vector <Person*> PersonOfCompany; //список работников в компании
 
-
-
 public:
     Company(std::string NameOfCompany);
 
@@ -28,11 +26,9 @@ public:
 
     bool CheckPerson(const std::string& Surname, const std::string& Name, const std::string& Patronymic); //проверить, устроен ли работник в компанию
 
-    unsigned GetCountPerson(); //получить чсило работников в компании
+    unsigned GetCountPerson(); //получить число работников в компании
 
     bool JoinAPerson(Person& person); //принять работника в компанию
-
-    //void InvitePerson(); //пригласить работника в компанию
 
     bool DismissPerson(Person& person); //убрать работника из компании
 
@@ -42,3 +38,4 @@ public:
 std::ostream& operator<<(std::ostream& stream, Company& company);
 
 #endif // COMPANY_H
+
