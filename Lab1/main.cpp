@@ -40,72 +40,93 @@ int main()
     company.push_back(Cisco);
     company.push_back(Oracle);
 
-    //////////////////////////ТЕСТ№1///////////////////////////////////////////////////////
-    company[0].JoinAPerson(FirstPerson);
-    company[0].JoinAPerson(ThirdPerson);
-    company[0].JoinAPerson(FifthPerson);
-    company[0].JoinAPerson(SeventhPerson);
-    company[0].JoinAPerson(NinthPerson);
+    /******************************************************************************************
+     *                                        ТЕСТ №1                                         *
+     * ***************************************************************************************/
+    company[0].JoinAPerson(&FirstPerson);
+    company[0].JoinAPerson(&ThirdPerson);
+    company[0].JoinAPerson(&FifthPerson);
+    company[0].JoinAPerson(&SeventhPerson);
+    company[0].JoinAPerson(&NinthPerson);
 
-    company[1].JoinAPerson(SecondPerson);
-    company[1].JoinAPerson(FourthPerson);
-    company[1].JoinAPerson(SixthPerson);
-    company[1].JoinAPerson(EighthPerson);
-    company[1].JoinAPerson(TenthPerson);
+    company[1].JoinAPerson(&SecondPerson);
+    company[1].JoinAPerson(&FourthPerson);
+    company[1].JoinAPerson(&SixthPerson);
+    company[1].JoinAPerson(&EighthPerson);
+    company[1].JoinAPerson(&TenthPerson);
 
-    company[2].JoinAPerson(ThirdPerson);
-    company[2].JoinAPerson(SixthPerson);
-    company[2].JoinAPerson(NinthPerson);
+    company[2].JoinAPerson(&ThirdPerson);
+    company[2].JoinAPerson(&SixthPerson);
+    company[2].JoinAPerson(&NinthPerson);
 
-    company[3].JoinAPerson(FourthPerson);
-    company[3].JoinAPerson(EighthPerson);
+    company[3].JoinAPerson(&FourthPerson);
+    company[3].JoinAPerson(&EighthPerson);
 
-    company[4].JoinAPerson(FifthPerson);
-    company[4].JoinAPerson(TenthPerson);
+    company[4].JoinAPerson(&FifthPerson);
+    company[4].JoinAPerson(&TenthPerson);
 
-    company[5].JoinAPerson(FirstPerson);
-    company[5].JoinAPerson(SecondPerson);
-    company[5].JoinAPerson(ThirdPerson);
-    company[5].JoinAPerson(FourthPerson);
-    company[5].JoinAPerson(FifthPerson);
+    company[5].JoinAPerson(&FirstPerson);
+    company[5].JoinAPerson(&SecondPerson);
+    company[5].JoinAPerson(&ThirdPerson);
+    company[5].JoinAPerson(&FourthPerson);
+    company[5].JoinAPerson(&FifthPerson);
 
-    company[6].JoinAPerson(SixthPerson);
-    company[6].JoinAPerson(SeventhPerson);
-    company[6].JoinAPerson(EighthPerson);
-    company[6].JoinAPerson(NinthPerson);
-    company[6].JoinAPerson(TenthPerson);
+    company[6].JoinAPerson(&SixthPerson);
+    company[6].JoinAPerson(&SeventhPerson);
+    company[6].JoinAPerson(&EighthPerson);
+    company[6].JoinAPerson(&NinthPerson);
+    company[6].JoinAPerson(&TenthPerson);
 
     std::cout << "ТЕСТ №1: " << std::endl;
-    for (uint16_t i = 0; i < company.size(); i++)
-    {
+    for (uint16_t i = 0; i < company.size(); i++) {
         std::cout << company[i] << std::endl;
     }
 
-    //////////////////////////////////ТЕСТ№2///////////////////////////////////////////////////////////
+    /******************************************************************************************
+     *                                        ТЕСТ №2                                         *
+     * ***************************************************************************************/
 
-    company[0].DismissPerson(FifthPerson);
-    company[1].DismissPerson(FourthPerson);
-    company[6].DismissPerson(EighthPerson);
+    company[0].DismissPerson(&FifthPerson);
+    company[1].DismissPerson(&FourthPerson);
+    company[6].DismissPerson(&EighthPerson);
 
     std::cout << "ТЕСТ №2: " << std::endl;
-    for (uint16_t i = 0; i < company.size(); i++)
-    {
+    for (uint16_t i = 0; i < company.size(); i++) {
         std::cout << company[i] << std::endl;
     }
 
-    ////////////////////////////////////ТЕСТ№3/////////////////////////////////////////////////////
+    /******************************************************************************************
+     *                                        ТЕСТ №3                                         *
+     * ***************************************************************************************/
 
-    company[1].JoinAPerson(ThirdPerson);
-    company[3].JoinAPerson(ThirdPerson);
-    company[4].JoinAPerson(ThirdPerson); //не добавит, так как у работника уже имеется 5 компаний!!!
+    company[1].JoinAPerson(&ThirdPerson);
+    company[3].JoinAPerson(&ThirdPerson);
+    company[4].JoinAPerson(&ThirdPerson); //не добавит, так как у работника уже имеется 5 компаний!!!
 
     std::cout << "ТЕСТ №3: " << std::endl;
-    for (uint16_t i = 0; i < company.size(); i++)
-    {
+    for (uint16_t i = 0; i < company.size(); i++) {
         std::cout << company[i] << std::endl;
     }
 
-    std::cin.get();
+    /******************************************************************************************
+     *                                        ТЕСТ №4                                         *
+     * ***************************************************************************************/
+
+    std::cout << "ТЕСТ №4: " << std::endl;
+    std::cout << "******************************************************" << std::endl;
+    std::cout << "Иванов Иван Иванович = " << company[0].CheckPerson("Иванов", "Иван", "Иванович") << std::endl; //вернет true, так как устроен в компанию
+    std::cout << "Петров Петр Петрович = " << company[0].CheckPerson("Петров", "Петр", "Петрович") << std::endl; //вернет false, так как не устроен в компанию
+    std::cout << "******************************************************" << std::endl;
+
+    /******************************************************************************************
+     *                                        ТЕСТ №5                                         *
+     * ***************************************************************************************/
+
+    std::cout << "ТЕСТ №5: " << std::endl;
+    std::cout << *company[0].GetPerson("Иванов", "Иван", "Иванович") << std::endl;
+
+    company.clear();
 
     return 0;
 }
+
