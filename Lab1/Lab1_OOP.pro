@@ -21,4 +21,3 @@ SOURCES += main.cpp \
 HEADERS += \
     person.h \
     company.h
-
