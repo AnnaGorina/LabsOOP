@@ -3,7 +3,6 @@
 #include <string>
 #include <vector>
 #include <iostream>
-#include <algorithm>
 #include <iterator>
 
 enum company{Microsoft, Apple, Samsung, Google, Intel, Cisco, Oracle};
