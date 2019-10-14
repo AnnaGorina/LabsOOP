@@ -25,9 +25,9 @@ public:
 
     uint16_t GetCountCompany(); //получить число компаний, в которых работает работник
 
-    bool JoinACompany(Company &company); //вступить в компанию
+    bool JoinACompany(Company& company); //вступить в компанию
 
-    bool LeaveCompany(Company &company); //покинуть компанию
+    bool LeaveCompany(Company& company); //покинуть компанию
 
     ~Person();
 };
