@@ -1,6 +1,5 @@
 #include "person.h"
 #include "company.h"
-#include <iostream>
 
 Person::Person(const std::string Surname, const std::string Name, const std::string Patronymic) {
     this->Name = Name;
@@ -24,8 +23,8 @@ uint16_t Person::GetCountCompany() {
     return CompanyCount;
 }
 
-bool Person::JoinACompany(Company* company) {
-    if(!company->JoinAPerson(this)) {
+bool Person::JoinACompany(Company& company) {
+    if(!company.JoinAPerson(*this)) {
         CompanyCount++;
 
         return true;
@@ -37,8 +36,8 @@ bool Person::JoinACompany(Company* company) {
 }
 
 
-bool Person::LeaveCompany(Company* company) {
-    if(!company->DismissPerson(this)) {
+bool Person::LeaveCompany(Company& company) {
+    if(!company.DismissPerson(*this)) {
         CompanyCount--;
 
         return true;
