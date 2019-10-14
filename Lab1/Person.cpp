@@ -25,7 +25,7 @@ uint16_t Person::GetCountCompany() {
 }
 
 bool Person::JoinACompany(Company* company) {
-    if(company->JoinAPerson(this)) {
+    if(!company->JoinAPerson(this)) {
         CompanyCount++;
 
         return true;
@@ -38,7 +38,7 @@ bool Person::JoinACompany(Company* company) {
 
 
 bool Person::LeaveCompany(Company* company) {
-    if(company->DismissPerson(this)) {
+    if(!company->DismissPerson(this)) {
         CompanyCount--;
 
         return true;
