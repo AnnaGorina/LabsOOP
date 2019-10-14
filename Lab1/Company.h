@@ -27,9 +27,9 @@ public:
 
     uint16_t GetCountPerson(); //получить число работников в компании
 
-    bool JoinAPerson(Person &person); //принять работника в компанию
+    bool JoinAPerson(Person& person); //принять работника в компанию
 
-    bool DismissPerson(Person &person); //убрать работника из компании
+    bool DismissPerson(Person& person); //убрать работника из компании
 
     ~Company();
 };
