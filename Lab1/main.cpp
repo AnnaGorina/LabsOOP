@@ -43,39 +43,39 @@ int main()
     /******************************************************************************************
      *                                        ТЕСТ №1                                         *
      * ***************************************************************************************/
-    company[0].JoinAPerson(&FirstPerson);
-    company[0].JoinAPerson(&ThirdPerson);
-    company[0].JoinAPerson(&FifthPerson);
-    company[0].JoinAPerson(&SeventhPerson);
-    company[0].JoinAPerson(&NinthPerson);
+    company[0].JoinAPerson(FirstPerson);
+    company[0].JoinAPerson(ThirdPerson);
+    company[0].JoinAPerson(FifthPerson);
+    company[0].JoinAPerson(SeventhPerson);
+    company[0].JoinAPerson(NinthPerson);
 
-    company[1].JoinAPerson(&SecondPerson);
-    company[1].JoinAPerson(&FourthPerson);
-    company[1].JoinAPerson(&SixthPerson);
-    company[1].JoinAPerson(&EighthPerson);
-    company[1].JoinAPerson(&TenthPerson);
+    company[1].JoinAPerson(SecondPerson);
+    company[1].JoinAPerson(FourthPerson);
+    company[1].JoinAPerson(SixthPerson);
+    company[1].JoinAPerson(EighthPerson);
+    company[1].JoinAPerson(TenthPerson);
 
-    company[2].JoinAPerson(&ThirdPerson);
-    company[2].JoinAPerson(&SixthPerson);
-    company[2].JoinAPerson(&NinthPerson);
+    company[2].JoinAPerson(ThirdPerson);
+    company[2].JoinAPerson(SixthPerson);
+    company[2].JoinAPerson(NinthPerson);
 
-    company[3].JoinAPerson(&FourthPerson);
-    company[3].JoinAPerson(&EighthPerson);
+    company[3].JoinAPerson(FourthPerson);
+    company[3].JoinAPerson(EighthPerson);
 
-    company[4].JoinAPerson(&FifthPerson);
-    company[4].JoinAPerson(&TenthPerson);
+    company[4].JoinAPerson(FifthPerson);
+    company[4].JoinAPerson(TenthPerson);
 
-    company[5].JoinAPerson(&FirstPerson);
-    company[5].JoinAPerson(&SecondPerson);
-    company[5].JoinAPerson(&ThirdPerson);
-    company[5].JoinAPerson(&FourthPerson);
-    company[5].JoinAPerson(&FifthPerson);
+    company[5].JoinAPerson(FirstPerson);
+    company[5].JoinAPerson(SecondPerson);
+    company[5].JoinAPerson(ThirdPerson);
+    company[5].JoinAPerson(FourthPerson);
+    company[5].JoinAPerson(FifthPerson);
 
-    company[6].JoinAPerson(&SixthPerson);
-    company[6].JoinAPerson(&SeventhPerson);
-    company[6].JoinAPerson(&EighthPerson);
-    company[6].JoinAPerson(&NinthPerson);
-    company[6].JoinAPerson(&TenthPerson);
+    company[6].JoinAPerson(SixthPerson);
+    company[6].JoinAPerson(SeventhPerson);
+    company[6].JoinAPerson(EighthPerson);
+    company[6].JoinAPerson(NinthPerson);
+    company[6].JoinAPerson(TenthPerson);
 
     std::cout << "ТЕСТ №1: " << std::endl;
     for (uint16_t i = 0; i < company.size(); i++) {
@@ -86,9 +86,9 @@ int main()
      *                                        ТЕСТ №2                                         *
      * ***************************************************************************************/
 
-    company[0].DismissPerson(&FifthPerson);
-    company[1].DismissPerson(&FourthPerson);
-    company[6].DismissPerson(&EighthPerson);
+    company[0].DismissPerson(FifthPerson);
+    company[1].DismissPerson(FourthPerson);
+    company[6].DismissPerson(EighthPerson);
 
     std::cout << "ТЕСТ №2: " << std::endl;
     for (uint16_t i = 0; i < company.size(); i++) {
@@ -99,9 +99,9 @@ int main()
      *                                        ТЕСТ №3                                         *
      * ***************************************************************************************/
 
-    company[1].JoinAPerson(&ThirdPerson);
-    company[3].JoinAPerson(&ThirdPerson);
-    company[4].JoinAPerson(&ThirdPerson); //не добавит, так как у работника уже имеется 5 компаний!!!
+    company[1].JoinAPerson(ThirdPerson);
+    company[3].JoinAPerson(ThirdPerson);
+    company[4].JoinAPerson(ThirdPerson); //не добавит, так как у работника уже имеется 5 компаний!!!
 
     std::cout << "ТЕСТ №3: " << std::endl;
     for (uint16_t i = 0; i < company.size(); i++) {
