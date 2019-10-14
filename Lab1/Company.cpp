@@ -37,29 +37,28 @@ uint16_t Company::GetCountPerson() {
     return PersonOfCompany.size();
 }
 
-bool Company::JoinAPerson(Person* person) {
-    if(person->GetCountCompany() <= 5) {
+bool Company::JoinAPerson(Person& person) {
+    if(person.GetCountCompany() < 5) {
         for(uint16_t i = 0; i < this->GetCountPerson(); i++) {
-            if(PersonOfCompany[i] == person) {
+            if(PersonOfCompany[i] == &person) {
                 return false;
             }
         }
-
-        PersonOfCompany.push_back(person);
-        person->JoinACompany(this);
+        PersonOfCompany.push_back(&person);
+        person.JoinACompany(*this);
         return true;
     }
 
     return false;
 }
 
-bool Company::DismissPerson(Person* person) {
+bool Company::DismissPerson(Person& person) {
     std::vector<Person*>::iterator it = PersonOfCompany.begin();
 
     for(uint16_t i = 0; i < PersonOfCompany.size(); i++) {
-        if(*it == person) {
+        if(*it == &person) {
             PersonOfCompany.erase(it);
-            person->LeaveCompany(this);
+            person.LeaveCompany(*this);
             //PersonOfCompany.erase(std::remove(PersonOfCompany.begin(), PersonOfCompany.end(), &person), PersonOfCompany.end());
             return true;
         }
