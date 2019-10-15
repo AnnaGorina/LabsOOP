@@ -30,7 +30,7 @@ int main()
     Company Cisco("Cisco");
     Company Oracle("Oracle");
 
-    std::vector <Company> company;
+    std::vector<Company> company;
 
     company.push_back(Microsoft);
     company.push_back(Apple);
