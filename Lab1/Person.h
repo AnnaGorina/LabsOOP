@@ -6,8 +6,7 @@
 
 class Company;
 
-class Person
-{
+class Person {
     std::string Name; //имя
     std::string Surname;  //фамилия
     std::string Patronymic; //отчетство
