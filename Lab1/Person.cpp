@@ -1,21 +1,21 @@
 #include "person.h"
 #include "company.h"
 
-Person::Person(const std::string Surname, const std::string Name, const std::string Patronymic) {
+Person::Person(const std::string& Surname, const std::string& Name, const std::string& Patronymic) {
     this->Name = Name;
     this->Surname = Surname;
     this->Patronymic = Patronymic;
 }
 
-const std::string& Person::get_name_person() const {
+const std::string& Person::GetNamePerson() const {
     return Name;
 }
 
-const std::string& Person::get_surname_person() const {
+const std::string& Person::GetSurnamePerson() const {
     return Surname;
 }
 
-const std::string& Person::get_patronymic_person() const {
+const std::string& Person::GetPatronymicPerson() const {
     return Patronymic;
 }
 
@@ -50,9 +50,9 @@ bool Person::LeaveCompany(Company& company) {
 
 Person::~Person() = default;
 
-std::ostream &operator<<(std::ostream &stream, Person &person) {
+std::ostream& operator<<(std::ostream& stream, Person& person) {
     stream << "******************************************************" << std::endl;
-    stream << "ФИО работника: " << person.get_surname_person() << " " << person.get_name_person() << " " << person.get_patronymic_person() << std::endl;
+    stream << "ФИО работника: " << person.GetSurnamePerson() << " " << person.GetNamePerson() << " " << person.GetPatronymicPerson() << std::endl;
     stream << "******************************************************" << std::endl;
 
     return stream;
