@@ -15,13 +15,13 @@ class Person
     uint16_t CompanyCount = 0; //количество компаний у работника
 
 public:
-    Person(const std::string Surname, const std::string Name, const std::string Patronymic);
+    Person(const std::string& Surname, const std::string& Name, const std::string& Patronymic);
 
-    const std::string& get_name_person() const;  //получить имя работника
+    const std::string& GetNamePerson() const;  //получить имя работника
 
-    const std::string& get_surname_person() const;  //получить фамилию работника
+    const std::string& GetSurnamePerson() const;  //получить фамилию работника
 
-    const std::string& get_patronymic_person() const;  //получить отчество работника
+    const std::string& GetPatronymicPerson() const;  //получить отчество работника
 
     uint16_t GetCountCompany(); //получить число компаний, в которых работает работник
 
