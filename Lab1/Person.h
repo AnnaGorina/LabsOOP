@@ -18,15 +18,12 @@ public:
     Person(const std::string& Surname, const std::string& Name, const std::string& Patronymic);
 
     const std::string& GetNamePerson() const;  //получить имя работника
-
     const std::string& GetSurnamePerson() const;  //получить фамилию работника
-
     const std::string& GetPatronymicPerson() const;  //получить отчество работника
 
     uint16_t GetCountCompany(); //получить число компаний, в которых работает работник
 
     bool JoinACompany(Company& company); //вступить в компанию
-
     bool LeaveCompany(Company& company); //покинуть компанию
 
     ~Person();
