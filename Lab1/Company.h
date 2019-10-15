@@ -3,21 +3,20 @@
 #include <string>
 #include <vector>
 #include <iostream>
+#include <algorithm>
 #include <iterator>
-
-enum company{Microsoft, Apple, Samsung, Google, Intel, Cisco, Oracle};
 
 class Person;
 
 class Company {
     std::string NameOfCompany; //название компании
 
-    std::vector <Person*> PersonOfCompany; //список работников в компании
+    std::vector<Person*> PersonOfCompany; //список работников в компании
 
 public:
-    Company(std::string NameOfCompany);
+    Company(const std::string& NameOfCompany);
 
-    std::string& get_company(); //получить название компании
+    std::string& GetCompany(); //получить название компании
 
     Person& GetNameOfPerson(uint16_t i) const; //получить i-го работника компании
 
