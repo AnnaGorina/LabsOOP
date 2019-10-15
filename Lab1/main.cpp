@@ -7,8 +7,7 @@
 #include <string>
 #include <iterator>
 
-int main()
-{
+int main() {
     setlocale(LC_ALL, "Russian");
     
     Person FirstPerson("Иванов", "Иван", "Иванович");
