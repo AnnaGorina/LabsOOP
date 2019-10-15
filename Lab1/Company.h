@@ -21,13 +21,11 @@ public:
     Person& GetNameOfPerson(uint16_t i) const; //получить i-го работника компании
 
     Person* GetPerson(const std::string& Surname, const std::string& Name, const std::string& Patronymic) const; //получить работника по ФИО
-
     bool CheckPerson(const std::string& Surname, const std::string& Name, const std::string& Patronymic); //проверить, устроен ли работник в компанию
 
     uint16_t GetCountPerson(); //получить число работников в компании
 
     bool JoinAPerson(Person& person); //принять работника в компанию
-
     bool DismissPerson(Person& person); //убрать работника из компании
 
     ~Company();
