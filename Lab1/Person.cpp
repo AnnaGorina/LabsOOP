@@ -29,7 +29,6 @@ bool Person::JoinACompany(Company& company) {
 
         return true;
     }
-
     else {
         return false;
     }
@@ -42,7 +41,6 @@ bool Person::LeaveCompany(Company& company) {
 
         return true;
     }
-
     else {
         return false;
     }
