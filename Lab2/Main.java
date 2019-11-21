@@ -1,10 +1,21 @@
 package com.company;
 
+import java.util.ArrayList;
+
 public class Main {
 
     public static void main(String[] args) {
-	    Person FirstPerson = new Person("Иванов", "Иван", "Иванович");
+	    Boss boss = new Boss("Sokolov","Ivan", "Ivanovich", new Company("Microsoft"));
+        ArrayList<Employee> Mrazi = new ArrayList<>();
+        {
+            Mrazi.add(new Employee("Ivanov", "Ivan", "Ivanovich"));
+            Mrazi.add(new Employee("P","K","I"));
+        }
 
-	    Company Microsoft = new Company("Microsoft", "Петров", "Петр", "Петрович");
+        Mrazi.get(0).JoinACompany(boss);
+        if (Mrazi.get(0).JoinACompany(boss)) {
+            System.out.println("Error");
+        }
     }
 }
+
