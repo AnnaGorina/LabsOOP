@@ -1,5 +1,6 @@
 package com.company;
 
+
 public class Employee extends Person {
 
     private int CompanyCount = 0;
@@ -15,7 +16,7 @@ public class Employee extends Person {
     }
 
     public boolean JoinACompany (Boss boss) {
-        if (!boss.JoinAPerson(this)) {
+        if (boss.JoinAPerson(this)) {
             CompanyCount++;
             return true;
         } else {
@@ -23,13 +24,8 @@ public class Employee extends Person {
         }
     }
 
-    public boolean LeaveACompany (Boss boss) {
-        if (!boss.DismissPerson(this)) {
-            CompanyCount--;
-            return true;
-        } else {
-            return false;
-        }
+    public void LeaveACompany (Boss boss) {
+        boss.DismissPerson(this);
     }
 
 }
