@@ -35,4 +35,9 @@ public class Person {
                 + ", Имя работника = " + Name
                 + ", Отчество работника = " + Patronymic;
     }
+
+    public boolean compare(String surname, String name, String patronymic) {
+        return this.Surname.equals(surname) && this.Name.equals(name) && this.Patronymic.equals(patronymic);
+    }
 }
+
