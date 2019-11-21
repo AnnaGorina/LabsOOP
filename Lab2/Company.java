@@ -6,13 +6,13 @@ public class Company {
     private String NameOfCompany;
 
 
-    private Boss boss;
+    //private Boss boss;
 
     private ArrayList<Employee>PersonOfCompany = new ArrayList<Employee>();
 
-    public Company (String NameOfCompany, String SurnameBoss, String NameBoss, String PatronymicBoss) {
+    public Company (String NameOfCompany) {
         this.NameOfCompany = NameOfCompany;
-        boss = new Boss(SurnameBoss, NameBoss, PatronymicBoss);
+        //boss = new Boss(SurnameBoss, NameBoss, PatronymicBoss);
     }
 
 
@@ -22,18 +22,18 @@ public class Company {
     }
 
     public final Employee GetPerson (final String Surname, final String Name, final String Patronymic) {
-        for (int i = 0; i < PersonOfCompany.size(); i++) {
-            if (PersonOfCompany.get(i).GetNamePerson() == Name && PersonOfCompany.get(i).GetSurnamePerson() == Surname && PersonOfCompany.get(i).GetPatronymicPerson() == Patronymic) {
-                return PersonOfCompany.get(i);
+        for (Employee employee : PersonOfCompany) {
+            if (employee.compare(Surname, Name, Patronymic)) {
+                return employee;
             }
         }
 
         return null;
     }
 
-    public boolean CheckPerson (final String Surname, final String Name, final String Patronymic) {
-        for (int i = 0; i < PersonOfCompany.size(); i++) {
-            if (PersonOfCompany.get(i).GetNamePerson() == Name && PersonOfCompany.get(i).GetSurnamePerson() == Surname && PersonOfCompany.get(i).GetPatronymicPerson() == Patronymic) {
+    public boolean isPerson (final String Surname, final String Name, final String Patronymic) {
+        for (Employee employee : PersonOfCompany) {
+            if (employee.compare(Surname, Name, Patronymic)) {
                 return true;
             }
         }
@@ -45,21 +45,15 @@ public class Company {
         return PersonOfCompany.size();
     }
 
-    public boolean JoinAPerson (Employee employee) {
-        if (!boss.JoinAPerson(employee)) {
-            PersonOfCompany.add(employee);
-            return true;
-        } else {
-            return false;
-        }
+    public boolean isPerson(Employee employee) {
+        return PersonOfCompany.contains(employee);
     }
 
-    public boolean DismissPerson (Employee employee) {
-        if (!boss.DismissPerson(employee)) {
-            PersonOfCompany.remove(employee);
-            return true;
-        } else {
-            return false;
-        }
+    public void addEmployee(Employee employee) {
+        PersonOfCompany.add(employee);
+    }
+
+    public void removeEmployee(Employee employee) {
+        PersonOfCompany.remove(employee);
     }
 }
